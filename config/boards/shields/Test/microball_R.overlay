@@ -63,13 +63,13 @@
 };
 
 / {
-+     /* ここで新規に macros ノードを生やす */
-+     macros {
-+         mkp_exit_AML: macro@0 {
-+             compatible = "zmk,behavior-macro-one-param";
-+             #binding-cells = <1>;
-+             binding-cells = <1>;
-+             param = <0>;
-+         };
-+     };
-+ };
+    /* ここで新規に macros ノードを生やす */
+    macros {
+        mkp_exit_AML: macro@0 {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            binding-cells = <1>;
+            param = <0>;
+        };
+    };
+};
