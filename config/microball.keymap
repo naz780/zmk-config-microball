@@ -6,7 +6,6 @@
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
-
 #define ZMK_POINTINGtt_DEFAULT_SCRL_VAL 100
 
 &mt {
@@ -72,7 +71,9 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             // 追加: スクロールのタップ時間を設定 (20ms)
+
             tap-ms = <20>;
         };
     };
@@ -84,11 +85,11 @@
             bindings = <
 &kp Q      &kp L     &kp U         &kp F        &kp MINUS                                          &kp K        &kp W  &kp R  &kp Y  &kp P
 &kp E      &kp I     &kp A         &kp O        &kp COMMA        &mkp MB3           &none          &kp G        &kp T  &kp N  &kp S  &kp H
-&kp Z      &kp X     &kp C         &kp V        &kp LSHFT        &none              &none          &kp RSHFT    &kp D  &kp M  &kp J  &kp B
+&kp Z      &kp X     &kp C         &kp V        &kp LSHFT        &lt 5 DOT          &none          &kp RSHFT    &kp D  &kp M  &kp J  &kp B
 &kp LSHFT  &kp LGUI  &kp LEFT_ALT  &lt 6 TILDE  &lt 1 BACKSPACE  &mt LCTRL TAB      &mt RCTRL RET  &lt 2 SPACE                       &kp RIGHT_SHIFT
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         MATH {
@@ -122,10 +123,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans    &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB3  &mkp MB1  &mkp MB2  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&to_layer_0 Q  &to_layer_0 L  &to_layer_0 U  &to_layer_0 F  &to_layer_0 MINUS                      &to_layer_0 K      &to_layer_0 W  &to_layer_0 R  &to_layer_0 Y  &to_layer_0 P
+&to_layer_0 E  &to_layer_0 I  &to_layer_0 A  &to_layer_0 O  &to_layer_0 COMMA  &trans      &trans  &mkp MB3           &mkp MB1       &mkp MB2       &to_layer_0 S  &to_layer_0 H
+&to_layer_0 Z  &to_layer_0 X  &to_layer_0 C  &to_layer_0 V  &to_layer_0 LSHFT  &trans      &trans  &to_layer_0 RSHFT  &to_layer_0 D  &to_layer_0 M  &to_layer_0 J  &to_layer_0 B
+&trans         &trans         &trans         &trans         &trans             &trans      &trans  &trans                                                          &trans
             >;
         };
 
