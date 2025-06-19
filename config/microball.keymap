@@ -59,6 +59,15 @@
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
             tap-ms = <20>;
         };
+
+        encoder_vol_down_up: encoder_vol_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_VOL_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>;
+            tap-ms = <20>; // 回転1回あたりの間隔
+        };
+
     };
 
     keymap {
@@ -91,6 +100,8 @@
 &kp BSLH  &kp LBRC  &kp GRAVE  &kp RBRC  &trans      &trans      &trans  &trans   &kp C_VOL_UP  &kp C_VOL_DN  &kp C_MUTE  &none
 &trans    &trans    &trans     &trans    &lt 3 BSPC  &trans      &trans  &none                                            &trans
             >;
+
+            sensor-bindings = <&encoder_vol_down_up>;
         };
 
         SYSTEM {
