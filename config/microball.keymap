@@ -24,7 +24,7 @@
 
         reset_L {
             bindings = <&bootloader>;
-            key-positions = <10 15>;
+            key-positions = <10 14>;
         };
 
         reset_R {
