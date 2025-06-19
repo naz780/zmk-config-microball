@@ -57,6 +57,7 @@
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
 
@@ -65,9 +66,9 @@
             label = "ENCODER_VOL_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>;
+
             tap-ms = <20>; // 回転1回あたりの間隔
         };
-
     };
 
     keymap {
@@ -91,6 +92,8 @@
 &kp DOLLAR  &kp N7        &kp N8        &kp N9        &trans     &trans      &trans  &trans       &kp EXCL  &kp QMARK  &kp COLON  &kp SEMI
 &trans      &trans        &trans        &trans        &none      &trans      &trans  &lt 3 SPACE                                  &trans
             >;
+
+            sensor-bindings = <&encoder_vol_down_up>;
         };
 
         NAVI {
