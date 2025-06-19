@@ -22,14 +22,14 @@
             key-positions = <18 19>;
         };
 
-        reset_L {
-            bindings = <&bootloader>;
-            key-positions = <10 14>;
-        };
-
         reset_R {
             bindings = <&bootloader>;
             key-positions = <16 21>;
+        };
+
+        capslock {
+            bindings = <&kp CAPS>;
+            key-positions = <26 29>;
         };
     };
 
@@ -87,10 +87,10 @@
 
         MATH {
             bindings = <
-&none       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp TILDE                      &kp CARET    &kp LT    &kp EQUAL  &kp GT     &kp PRCNT
-&kp N0      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp DOT    &trans      &trans  &kp UNDER    &kp PLUS  &kp MINUS  &kp STAR   &kp FSLH
-&kp DOLLAR  &kp N7        &kp N8        &kp N9        &trans     &trans      &trans  &trans       &kp EXCL  &kp QMARK  &kp COLON  &kp SEMI
-&trans      &trans        &trans        &trans        &none      &trans      &trans  &lt 3 SPACE                                  &trans
+&none       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp TILDE                          &kp CARET    &kp LT    &kp EQUAL  &kp GT     &kp PRCNT
+&kp N0      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp DOT    &kp C_MUTE      &trans  &kp UNDER    &kp PLUS  &kp MINUS  &kp STAR   &kp FSLH
+&kp DOLLAR  &kp N7        &kp N8        &kp N9        &trans     &trans          &trans  &trans       &kp EXCL  &kp QMARK  &kp COLON  &kp SEMI
+&trans      &trans        &trans        &trans        &none      &trans          &trans  &lt 3 SPACE                                  &trans
             >;
 
             sensor-bindings = <&encoder_vol_down_up>;
@@ -98,32 +98,32 @@
 
         NAVI {
             bindings = <
-&kp AT    &kp LBKT  &kp DQT    &kp RBKT  &kp AMPS                        &kp ESC  &none         &kp UP        &none       &none
-&kp HASH  &kp LPAR  &kp SQT    &kp RPAR  &kp PIPE    &trans      &trans  &none    &kp LEFT      &kp DOWN      &kp RIGHT   &kp LS(LG(S))
-&kp BSLH  &kp LBRC  &kp GRAVE  &kp RBRC  &trans      &trans      &trans  &trans   &kp C_VOL_UP  &kp C_VOL_DN  &kp C_MUTE  &none
-&trans    &trans    &trans     &trans    &lt 3 BSPC  &trans      &trans  &none                                            &trans
+&kp AT    &kp LBKT  &kp DQT    &kp RBKT  &kp AMPS                        &kp ESC  &none     &kp UP    &none      &none
+&kp HASH  &kp LPAR  &kp SQT    &kp RPAR  &kp PIPE    &trans      &trans  &none    &kp LEFT  &kp DOWN  &kp RIGHT  &kp LS(LG(S))
+&kp BSLH  &kp LBRC  &kp GRAVE  &kp RBRC  &trans      &trans      &trans  &trans   &none     &none     &none      &none
+&trans    &trans    &trans     &trans    &lt 3 BSPC  &trans      &trans  &none                                   &trans
             >;
 
-            sensor-bindings = <&encoder_vol_down_up>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         SYSTEM {
             bindings = <
-&bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2                      &kp ESC  &kp INS  &kp HOME  &kp PG_UP  &trans
-&trans          &kp LCTRL   &kp LGUI      &kp LALT      &kp LSHFT     &trans      &trans  &none    &kp DEL  &kp END   &kp PG_DN  &trans
+&bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2                      &kp ESC  &kp INS  &kp HOME  &kp PG_UP  &none
+&none           &kp LCTRL   &kp LGUI      &kp LALT      &kp LSHFT     &trans      &trans  &none    &kp DEL  &kp END   &kp PG_DN  &none
 &kp F1          &kp F2      &kp F3        &kp F4        &kp F5        &kp F6      &kp F7  &kp F8   &kp F9   &kp F10   &kp F11    &kp F12
 &trans          &trans      &trans        &trans        &none         &trans      &trans  &none                                  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         MOUSE {
             bindings = <
-&to_layer_0 Q  &to_layer_0 L  &to_layer_0 U  &to_layer_0 F  &to_layer_0 MINUS                      &to_layer_0 K      &to_layer_0 W  &to_layer_0 R  &to_layer_0 Y  &to_layer_0 P
-&to_layer_0 E  &to_layer_0 I  &to_layer_0 A  &to_layer_0 O  &to_layer_0 COMMA  &trans      &trans  &mkp MB3           &mkp MB1       &mkp MB2       &to_layer_0 S  &to_layer_0 H
-&to_layer_0 Z  &to_layer_0 X  &to_layer_0 C  &to_layer_0 V  &to_layer_0 LSHFT  &trans      &trans  &to_layer_0 RSHFT  &to_layer_0 D  &to_layer_0 M  &to_layer_0 J  &to_layer_0 B
-&trans         &trans         &trans         &trans         &trans             &trans      &trans  &trans                                                          &trans
+&to_layer_0 Q  &to_layer_0 L  &to_layer_0 U  &to_layer_0 F  &to_layer_0 MINUS                        &to_layer_0 K      &to_layer_0 W  &to_layer_0 R  &to_layer_0 Y  &to_layer_0 P
+&to_layer_0 E  &to_layer_0 I  &to_layer_0 A  &to_layer_0 O  &to_layer_0 COMMA  &mkp MB3      &trans  &mkp MB3           &mkp MB1       &mkp MB2       &to_layer_0 S  &to_layer_0 H
+&to_layer_0 Z  &to_layer_0 X  &to_layer_0 C  &to_layer_0 V  &to_layer_0 LSHFT  &trans        &trans  &to_layer_0 RSHFT  &to_layer_0 D  &to_layer_0 M  &to_layer_0 J  &to_layer_0 B
+&trans         &trans         &trans         &trans         &trans             &trans        &trans  &trans                                                          &trans
             >;
         };
 
