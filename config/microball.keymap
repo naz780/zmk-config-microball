@@ -58,12 +58,12 @@
         default_layer {
             bindings = <
 &kp Q      &kp L     &kp U         &kp F        &kp MINUS                                          &kp K        &kp W  &kp R  &kp Y  &kp P
-&kp E      &kp I     &kp A         &kp O        &kp COMMA        &none              &none          &kp G        &kp T  &kp N  &kp S  &kp H
+&kp E      &kp I     &kp A         &kp O        &kp COMMA        &mkp MB3           &none          &kp G        &kp T  &kp N  &kp S  &kp H
 &kp Z      &kp X     &kp C         &kp V        &kp LSHFT        &none              &none          &kp RSHFT    &kp D  &kp M  &kp J  &kp B
 &kp LSHFT  &kp LGUI  &kp LEFT_ALT  &lt 6 TILDE  &lt 1 BACKSPACE  &mt LCTRL TAB      &mt RCTRL RET  &lt 2 SPACE                       &kp RIGHT_SHIFT
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
 
         MATH {
@@ -77,8 +77,8 @@
 
         NAVI {
             bindings = <
-&kp AT    &kp LBKT  &kp DQT    &kp RBKT  &kp AMPS                        &kp ESC  &none         &none         &none       &kp LG(LS(S))
-&kp HASH  &kp LPAR  &kp SQT    &kp RPAR  &kp PIPE    &trans      &trans  &none    &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT
+&kp AT    &kp LBKT  &kp DQT    &kp RBKT  &kp AMPS                        &kp ESC  &none         &kp UP        &none       &none
+&kp HASH  &kp LPAR  &kp SQT    &kp RPAR  &kp PIPE    &trans      &trans  &none    &kp LEFT      &kp DOWN      &kp RIGHT   &kp LS(LG(S))
 &kp BSLH  &kp LBRC  &kp GRAVE  &kp RBRC  &trans      &trans      &trans  &trans   &kp C_VOL_UP  &kp C_VOL_DN  &kp C_MUTE  &none
 &trans    &trans    &trans     &trans    &lt 3 BSPC  &trans      &trans  &none                                            &trans
             >;
