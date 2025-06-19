@@ -42,8 +42,6 @@
         };
     };
 
-    
-
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
@@ -58,7 +56,9 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
             // 追加: スクロールのタップ時間を設定 (20ms)
+
             tap-ms = <20>;
         };
     };
@@ -74,7 +74,7 @@
 &kp LSHFT  &kp LGUI  &kp LEFT_ALT  &lt 6 TILDE  &lt 1 BACKSPACE  &mt LCTRL TAB      &mt RCTRL RET  &lt 2 SPACE                       &kp RIGHT_SHIFT
             >;
 
-        sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
         MATH {
