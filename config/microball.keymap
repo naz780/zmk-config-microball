@@ -44,11 +44,6 @@
             bindings = <&kp LG(SPACE)>;
             key-positions = <13 12>;
         };
-
-        ScreenShots {
-            bindings = <&kp LG(LS(S))>;
-            key-positions = <13 18>;
-        };
     };
 
     macros {
