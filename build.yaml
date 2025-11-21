@@ -25,22 +25,3 @@ include:
    shield: microball_L
  - board: seeeduino_xiao_ble
    shield: settings_reset
-
-#
-# https://note.com/heace/n/n4cbf41ef1c57
-#
-manifest:
-  remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    - name: prospector
-      url-base: https://github.com/t-ogura
-  projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: main
-      import: app/west.yml
-    - name: prospector-zmk-module
-      remote: prospector
-      revision: v1.0.0
-      path: modules/prospector-zmk-module
